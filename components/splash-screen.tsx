@@ -16,7 +16,7 @@ export function SplashScreen() {
     }, [router]);
 
     return (
-        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-opacity duration-700 animate-out fade-out">
+        <div className="absolute inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-opacity duration-700 animate-out fade-out">
             <div className="absolute inset-0 animate-in zoom-in-50 duration-700">
                 <Image
                     src="/splash-image.jpg"
