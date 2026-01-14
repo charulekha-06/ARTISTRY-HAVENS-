@@ -2,18 +2,21 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export function SplashScreen() {
+    const router = useRouter();
     const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
         // Hide splash screen after 2.5 seconds
         const timer = setTimeout(() => {
             setIsVisible(false);
+            router.push("/onboarding/language");
         }, 2500);
 
         return () => clearTimeout(timer);
-    }, []);
+    }, [router]);
 
     if (!isVisible) return null;
 

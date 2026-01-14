@@ -16,8 +16,8 @@ export function MobileNav() {
         { href: "/profile", label: "Profile", icon: User },
     ];
 
-    // Hide mobile nav on auth pages
-    if (pathname?.startsWith("/auth")) {
+    // Hide mobile nav on auth pages and onboarding
+    if (pathname?.startsWith("/auth") || pathname?.startsWith("/onboarding")) {
         return null;
     }
 
