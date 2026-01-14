@@ -17,16 +17,18 @@ export function SplashScreen() {
 
     return (
         <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-opacity duration-700 animate-out fade-out">
-            <div className="relative w-64 h-64 md:w-96 md:h-96 animate-in zoom-in-50 duration-700">
+            <div className="absolute inset-0 animate-in zoom-in-50 duration-700">
                 <Image
                     src="/splash-image.jpg"
                     alt="Artistry Havens"
                     fill
-                    className="object-contain"
+                    className="object-cover"
                     priority
                 />
+                {/* Overlay for better text readability */}
+                <div className="absolute inset-0 bg-black/30" />
             </div>
-            <h1 className="mt-8 text-2xl font-serif font-bold text-primary animate-pulse">
+            <h1 className="relative z-10 mt-8 text-4xl font-serif font-bold text-white animate-pulse drop-shadow-md">
                 Artistry Havens
             </h1>
         </div>
