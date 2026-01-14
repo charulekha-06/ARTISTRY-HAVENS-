@@ -52,6 +52,21 @@ function AuthPageContent() {
     const sendOtp = async () => {
         setLoading(true);
         setMessage("");
+
+        // Safety Check for Firebase Config
+        if (!auth || !auth.app) {
+            setLoading(false);
+            setMessage("Error: Firebase Keys missing. Add them to Vercel Environment Variables.");
+            return;
+        }
+
+        // Safety Check for Recaptcha
+        if (!window.recaptchaVerifier) {
+            setLoading(false);
+            setMessage("Error: reCAPTCHA not initialized. Refresh the page.");
+            return;
+        }
+
         try {
             const formattedPhone = phoneNumber.startsWith("+") ? phoneNumber : `+91${phoneNumber}`;
             const appVerifier = window.recaptchaVerifier;
