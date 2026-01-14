@@ -7,9 +7,12 @@ import { cn } from "@/lib/utils";
 
 const languages = [
     { code: "en", name: "English", localName: "English" },
+    { code: "ml", name: "Malayalam", localName: "മലയാളം" },
+    { code: "ta", name: "Tamil", localName: "தமிழ்" },
+    { code: "ur", name: "Urdu", localName: "اردو" },
     { code: "hi", name: "Hindi", localName: "हिंदी" },
-    { code: "es", name: "Spanish", localName: "Español" },
-    { code: "fr", name: "French", localName: "Français" },
+    { code: "kn", name: "Kannada", localName: "ಕನ್ನಡ" },
+    { code: "mr", name: "Marathi", localName: "मराठी" },
 ];
 
 export default function LanguageSelectionPage() {
@@ -18,10 +21,8 @@ export default function LanguageSelectionPage() {
 
     const handleContinue = () => {
         if (selectedLang) {
-            // Save language preference (e.g., to localStorage or context)
             localStorage.setItem("user-language", selectedLang);
-            // Navigate to the next step (e.g., Authentication or Home)
-            router.push("/auth?role=buyer"); // Defaulting to buyer auth flow for now or home
+            router.push(`/onboarding/role?lang=${selectedLang}`);
         }
     };
 
@@ -48,7 +49,7 @@ export default function LanguageSelectionPage() {
                             )}
                         >
                             <div className="flex flex-col items-start">
-                                <span className="text-lg font-medium text-foreground">
+                                <span className={`text-lg font-medium text-foreground ${lang.code === 'ur' ? 'font-serif' : ''}`}>
                                     {lang.localName}
                                 </span>
                                 <span className="text-sm text-muted-foreground">{lang.name}</span>

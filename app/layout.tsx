@@ -39,10 +39,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="relative flex min-h-screen flex-col bg-background pb-16 md:pb-0">
-          <SplashScreen />
-          {children}
-          <MobileNav />
+        <div className="flex min-h-screen items-center justify-center bg-zinc-100 dark:bg-zinc-900">
+          {/* Mobile Frame */}
+          <div className="relative w-full max-w-[390px] h-[100dvh] max-h-[844px] flex flex-col bg-background shadow-2xl overflow-hidden sm:rounded-[2rem] sm:border-[8px] sm:border-zinc-800">
+            {/* Content Area */}
+            <div className="flex-1 overflow-y-auto no-scrollbar relative flex flex-col">
+              {children}
+            </div>
+            {/* Mobile Nav - positioned absolute or fixed within relative container might be tricky, but flex-col makes it easier if it's just at bottom */}
+            <MobileNav />
+          </div>
         </div>
       </body>
     </html>

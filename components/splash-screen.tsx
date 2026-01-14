@@ -1,24 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export function SplashScreen() {
     const router = useRouter();
-    const [isVisible, setIsVisible] = useState(true);
-
     useEffect(() => {
-        // Hide splash screen after 2.5 seconds
+        // Redirect to onboarding after 2.5 seconds
         const timer = setTimeout(() => {
-            setIsVisible(false);
             router.push("/onboarding/language");
         }, 2500);
 
         return () => clearTimeout(timer);
     }, [router]);
-
-    if (!isVisible) return null;
 
     return (
         <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-opacity duration-700 animate-out fade-out">

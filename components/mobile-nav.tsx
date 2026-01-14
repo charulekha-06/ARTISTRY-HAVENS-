@@ -22,7 +22,7 @@ export function MobileNav() {
     }
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 border-t border-border bg-background/80 backdrop-blur-md pb-safe-area-inset-bottom z-50 md:hidden">
+        <div className="w-full border-t border-border bg-background/80 backdrop-blur-md pb-safe-area-inset-bottom z-50">
             <nav className="flex items-center justify-around h-16">
                 {navItems.map((item) => {
                     const Icon = item.icon;
