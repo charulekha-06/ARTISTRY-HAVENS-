@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore";
 import { getFunctions } from "firebase/functions";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAP2HqkiAmvGQBKSuYR14Szh25CyLP3fK0",
-  authDomain: "snappy-photon-484114-t9.firebaseapp.com",
-  projectId: "snappy-photon-484114-t9",
-  storageBucket: "snappy-photon-484114-t9.firebasestorage.app",
-  messagingSenderId: "615500564729",
-  appId: "1:615500564729:web:07b7fa94086eaf4aec7a28",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase only if config is valid
