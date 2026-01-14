@@ -7,10 +7,10 @@ import { useRouter } from "next/navigation";
 export function SplashScreen() {
     const router = useRouter();
     useEffect(() => {
-        // Redirect to onboarding after 2.5 seconds
+        // Redirect to onboarding after 2 seconds
         const timer = setTimeout(() => {
             router.push("/onboarding/language");
-        }, 2500);
+        }, 2000);
 
         return () => clearTimeout(timer);
     }, [router]);

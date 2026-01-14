@@ -6,6 +6,10 @@ import { cn } from "@/lib/utils";
 import { User, Store, HandHeart } from "lucide-react";
 import Image from "next/image";
 
+import artisanImg from "@/public/artisan.jpg";
+import buyerImg from "@/public/buyer.png";
+import sponsorImg from "@/public/sponsor.png";
+
 // Translations for Roles
 const translations: Record<string, { title: string; subtitle: string; artisan: string; buyer: string; sponsor: string; continue: string }> = {
     en: { title: "Choose your category", subtitle: "How will you participate in Artistry Havens?", artisan: "Artisan", buyer: "Buyer", sponsor: "Sponsor", continue: "Continue" },
@@ -14,7 +18,7 @@ const translations: Record<string, { title: string; subtitle: string; artisan: s
     ta: { title: "உங்கள் வகையைத் தேர்ந்தெடுக்கவும்", subtitle: "ஆர்டிஸ்ட்ரி ஹேவன்ஸில் நீங்கள் எவ்வாறு பங்கேற்பீர்கள்?", artisan: "கலைஞர்", buyer: "வாங்குபவர்", sponsor: "ஸ்பான்சர்", continue: "தொடரவும்" },
     ur: { title: "اپنی قسم منتخب کریں", subtitle: "آپ آرٹسٹری ہیونز میں کیسے حصہ لیں گے؟", artisan: "کاریگر", buyer: "خریدار", sponsor: "اسپانسر", continue: "جاری رکھیں" },
     kn: { title: "ನಿಮ್ಮ ವರ್ಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ", subtitle: "ನೀವು ಆರ್ಟಿಸ್ಟ್ರಿ ಹ್ಯಾವೆನ್ಸ್‌ನಲ್ಲಿ ಹೇಗೆ ಭಾಗವಹಿಸುತ್ತೀರಿ?", artisan: "ಕುಶಲಕರ್ಮಿ", buyer: "ಖರೀದಿದಾರ", sponsor: "ಪ್ರಾಯೋಜಕ", continue: "ಮುಂದುಾಯಿಸಿ" },
-    mr: { title: "तुमची श्रेणी निवडा", subtitle: "तुम्ही आर्टिस्टरी हेवेन्समध्ये कसे सहभागी व्हाल?", artisan: "कारागीर", buyer: "ग्राहक", sponsor: "प्रायोजक", continue: "पुढे चालू ठेवा" },
+    mr: { title: "तुमची श्रेणी निवडा", subtitle: "तुम्ही आर्टिस्ट्री हेवेन्समध्ये कसे सहभागी व्हाल?", artisan: "कारागीर", buyer: "ग्राहक", sponsor: "प्रायोजक", continue: "पुढे चालू ठेवा" },
 };
 
 function RoleSelectionContent() {
@@ -54,10 +58,12 @@ function RoleSelectionContent() {
                     >
                         <div className="h-40 w-40 mb-2 relative rounded-md overflow-hidden flex-shrink-0">
                             <Image
-                                src="/artisan.jpg"
+                                src={artisanImg}
                                 alt="Artisan"
                                 fill
                                 className="object-cover"
+                                placeholder="blur"
+                                priority
                             />
                         </div>
                         <span className="text-lg font-medium text-foreground">{t.artisan}</span>
@@ -74,10 +80,12 @@ function RoleSelectionContent() {
                     >
                         <div className="h-40 w-40 mb-2 relative rounded-md overflow-hidden flex-shrink-0">
                             <Image
-                                src="/buyer.png"
+                                src={buyerImg}
                                 alt="Buyer"
                                 fill
                                 className="object-cover"
+                                placeholder="blur"
+                                priority
                             />
                         </div>
                         <span className="text-lg font-medium text-foreground">{t.buyer}</span>
@@ -94,10 +102,12 @@ function RoleSelectionContent() {
                     >
                         <div className="h-40 w-40 mb-2 relative rounded-md overflow-hidden flex-shrink-0">
                             <Image
-                                src="/sponsor.png"
+                                src={sponsorImg}
                                 alt="Sponsor"
                                 fill
                                 className="object-cover"
+                                placeholder="blur"
+                                priority
                             />
                         </div>
                         <span className="text-lg font-medium text-foreground">{t.sponsor}</span>
